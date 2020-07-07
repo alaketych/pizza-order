@@ -1,10 +1,5 @@
 import React from 'react'
 
-import Pizza1 from '../images/pizza-1.png'
-import Pizza2 from '../images/pizza-2.png'
-import Pizza3 from '../images/pizza-3.png'
-import Pizza4 from '../images/pizza-4.png'
-
 class Item extends React.Component {
     constructor(props) {
         super(props)

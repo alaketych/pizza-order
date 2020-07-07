@@ -9,7 +9,7 @@ function Header() {
             <div className="container">
                 <div className="logo">
                     <div className="image-logo">
-                        <img class="logo" src={PizzaLogo} alt="PizzaOrder"/>
+                        <img className="logo" src={PizzaLogo} alt="PizzaOrder"/>
                     </div>
 
                     <div className="logo-description">

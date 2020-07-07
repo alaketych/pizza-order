@@ -1,24 +1,19 @@
 import React from 'react'
-import Item from './Item'
 
-import Pizza1 from '../images/pizza-1.png'
-import Pizza2 from '../images/pizza-2.png'
-import Pizza3 from '../images/pizza-3.png'
-import Pizza4 from '../images/pizza-4.png'
+import { Categories, Item } from './index'
 
 function Main() {
     return (
       <div className="main">
         <div className="container">
           <div className="main__options">
-            <ul className="types">
-              <li className="categories active">Все</li>
-              <li className="categories">Мясные</li>
-              <li className="categories">Вегетиранские</li>
-              <li className="categories">Гриль</li>
-              <li className="categories">Острые</li>
-              <li className="categories">Закрытые</li>
-            </ul>
+            <Categories items = {[
+              'Мясные',
+              'Вегетерианские',
+              'Гриль',
+              'Острые',
+              'Закрытые'
+            ]}/>
 
             <div className="filter">
               <div className="filter__label">
@@ -27,9 +22,9 @@ function Main() {
               </div>
             </div>
 
-            <div class="filter__popup">
+            <div className="filter__popup">
               <ul>
-                <li class="active">популярности</li>
+                <li className="active">популярности</li>
                 <li>цене</li>
                 <li>алфавиту</li>
               </ul>
