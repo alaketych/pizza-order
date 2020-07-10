@@ -1,34 +1,32 @@
 import React from 'react'
 
-import { Categories, Item } from './index'
+import { Categories, Sorting, Item } from './index'
 
 function Main() {
     return (
       <div className="main">
         <div className="container">
           <div className="main__options">
-            <Categories items = {[
-              'Мясные',
-              'Вегетерианские',
-              'Гриль',
-              'Острые',
-              'Закрытые'
-            ]}/>
+            <Categories
+              onClickItem={categoryName => {
+                console.log(categoryName)
+              }}
 
-            <div className="filter">
-              <div className="filter__label">
-                <b>Сортировка по: </b>
-                <span>популярности</span>
-              </div>
-            </div>
+              items = {[
+                'Мясные',
+                'Вегетерианские',
+                'Гриль',
+                'Острые',
+                'Закрытые',
+              ]}
+            />
 
-            <div className="filter__popup">
-              <ul>
-                <li className="active">популярности</li>
-                <li>цене</li>
-                <li>алфавиту</li>
-              </ul>
-            </div>
+            <Sorting items = {[
+                'популярности',
+                'цене',
+                'алфавиту',
+              ]}
+            />
           </div>
 
           <div className="main__content">
