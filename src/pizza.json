@@ -1,0 +1,107 @@
+{
+    "Pizza": [
+        {
+            "id": 0,
+            "Name": "Пепперони Фреш с томатами",
+            "Image": "https://cdn.dodostatic.net/static/Img/Products/f57b939a4455453daade38016f61d766_233x233.jpeg",
+            "Dimention": [{
+                "small": 25,
+                "medium": 30,
+                "large": 35
+            }],
+            "Type": ["traditional", "thin"],
+            "Price": "149"
+        },
+
+        {
+            "id": 1,
+            "Name": "Пепперони Фреш с перцем",
+            "Image": "https://cdn.dodostatic.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_233x233.jpeg",
+            "Dimention": [{
+                "small": 25,
+                "medium": 30,
+                "large": 35
+            }],
+            "Type": ["traditional", "thin"],
+            "Price": "179"
+        },
+
+        {
+            "id": 2,
+            "Name": "Сырная",
+            "Image": "https://cdn.dodostatic.net/static/Img/Products/Pizza/ru-RU/50d61738-66c4-4e32-914b-893b15463041.jpg",
+            "Dimention": [{
+                "small": 25,
+                "medium": 30,
+                "large": 35
+            }],
+            "Type": ["traditional", "thin"],
+            "Price": "99"
+        },
+
+        {
+            "id": 3,
+            "Name": "Чизбургер-пицца",
+            "Image": "https://cdn.dodostatic.net/static/Img/Products/Pizza/ru-RU/652c9a6f-1b13-4cfa-b822-b4d5854c1d94.jpg",
+            "Dimention": [{
+                "small": 25,
+                "medium": 30,
+                "large": 35
+            }],
+            "Type": ["traditional", "thin"],
+            "Price": "249"
+        },
+
+        {
+            "id": 4,
+            "Name": "Ветчина и сыр",
+            "Image": "https://cdn.dodostatic.net/static/Img/Products/Pizza/ru-RU/483b5bef-1b34-49dc-81c6-3d912468eee2.jpg",
+            "Dimention": [{
+                "small": 25,
+                "medium": 30,
+                "large": 35
+            }],
+            "Type": ["traditional", "thin"],
+            "Price": "199"
+        },
+
+        {
+            "id": 5,
+            "Name": "Кисло-сладкий цыпленок",
+            "Image": "https://cdn.dodostatic.net/static/Img/Products/Pizza/ru-RU/30744281-c5e9-48d4-b901-34182833846e.jpg",
+            "Dimention": [{
+                "small": 25,
+                "medium": 30,
+                "large": 35
+            }],
+            "Type": ["traditional", "thin"],
+            "Price": "149"
+        },
+
+        {
+            "id": 6,
+            "Name": "Овощи и грибы",
+            "Image": "https://cdn.dodostatic.net/static/Img/Products/Pizza/ru-RU/2fcaf96e-58b1-474f-b4f4-8e7d0a78929e.jpg",
+            "Dimention": [{
+                "small": 25,
+                "medium": 30,
+                "large": 35
+            }],
+            "Type": ["traditional", "thin"],
+            "Price": "69"
+        },
+
+        {
+            "id": 7,
+            "Name": "Пирог-пицца",
+            "Image": "https://cdn.dodostatic.net/static/Img/Products/Pizza/ru-RU/7cc16926-4746-4cb9-89d0-306941118780.jpg",
+            "Dimention": [{
+                "small": 25,
+                "medium": 30,
+                "large": 35
+            }],
+            "Type": ["traditional", "thin"],
+            "Price": "199"
+        }
+    ]
+}
