@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchPizzas } from '../redux/actions/pizzas'
+import { addPizza } from '../redux/actions/cart'
 import { setCategory, setSortBy } from '../redux/actions/filters'
 import { Categories, SortPopup, PizzaBlock, PizzaLoader } from '../components'
+import { object } from 'prop-types'
 
 const categoryNames = ['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые']
 const sortItems = [
@@ -12,10 +14,11 @@ const sortItems = [
 ]
 
 function Home() {
-  const dispatch = useDispatch()
-  const items = useSelector(({ pizzas }) => pizzas.items)
-  const isLoaded = useSelector(({ pizzas }) => pizzas.isLoaded)
-  const { category, sortBy } = useSelector(( {filters} ) => filters)
+  const dispatch  = useDispatch()
+  const items     = useSelector(({ pizzas }) => pizzas.items)
+  const cartItems = useSelector(({ cart })   => cart.items )
+  const isLoaded  = useSelector(({ pizzas }) => pizzas.isLoaded)
+  const { category, sortBy }       = useSelector(({ filters }) => filters)
 
   useEffect(() => {
     dispatch(fetchPizzas(category, sortBy))
@@ -27,6 +30,10 @@ function Home() {
 
   const onSelectSortType = type => {
     dispatch(setSortBy(type))
+  }
+
+  const addToCart = object => {
+    dispatch(addPizza(object))
   }
 
   return (
@@ -47,7 +54,12 @@ function Home() {
       <div className="content__items">
         {
           isLoaded
-            ? items.map((obj) => (<PizzaBlock key={obj.id} isLoading={true} {...obj} />))
+            ? items.map(object => (<PizzaBlock addToCart={ addToCart }
+                                      key={ object.id }
+                                      quantity={ cartItems[object.id] && cartItems[object.id].length }
+                                      { ...object } />
+                                  )
+                        )
             : Array(10)
               .fill(0)
               .map((_, index) => (<PizzaLoader key={index}></PizzaLoader>))
