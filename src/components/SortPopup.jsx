@@ -17,6 +17,17 @@ function SortPopup({ items, activeSortType, onClickSortType }) {
     setVisiblePopup(false)
   }
 
+  const handleOutsideClick = event => {
+    const path = event.path || (event.composedPath && event.composedPath());
+    if (!path.includes(sortRef.current)) {
+      setVisiblePopup(false);
+    }
+  }
+
+  React.useEffect(() => {
+    document.body.addEventListener('click', handleOutsideClick);
+  }, []);
+
   return (
     <div ref={sortRef} className="sort">
       <div className="sort__label">

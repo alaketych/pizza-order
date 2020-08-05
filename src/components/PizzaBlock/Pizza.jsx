@@ -2,19 +2,32 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-function PizzaBlock({ name, imageUrl, price, types, sizes }) {
+function PizzaBlock({ id, name, imageUrl, types, sizes, price, addToCart, quantity }) {
   const availableTypes = ['тонкое', 'традиционное']
   const availableSizes = [26, 30, 40]
 
   const [activeType, setActiveType] = useState(types[0])
-  const [activeSize, setActiveSize] = useState(sizes[0])
+  const [activeSize, setActiveSize] = useState(0)
 
-  const onSelectType = (index) => {
+  const onSelectType = index => {
     setActiveType(index)
   }
 
-  const onSelectSize = (index) => {
+  const onSelectSize = index => {
     setActiveSize(index)
+  }
+
+  const addPizzaToCart = () => {
+    const object = {
+      id,
+      name,
+      imageUrl,
+      price,
+      type: availableTypes[activeType],
+      size: availableSizes[activeSize],
+    }
+
+    addToCart(object)
   }
 
   return (
@@ -52,8 +65,8 @@ function PizzaBlock({ name, imageUrl, price, types, sizes }) {
         </ul>
       </div>
       <div className="pizza-block__bottom">
-        <div className="pizza-block__price">от {price} ₽</div>
-        <div className="button button--outline button--add">
+        <div className="pizza-block__price">от {price} ₴</div>
+        <div className="button button--outline button--add" onClick={ addPizzaToCart }>
           <svg
             width="12"
             height="12"
@@ -66,7 +79,7 @@ function PizzaBlock({ name, imageUrl, price, types, sizes }) {
             />
           </svg>
           <span>Добавить</span>
-          <i>2</i>
+          <i>{ quantity }</i>
         </div>
       </div>
     </div>
@@ -79,6 +92,8 @@ PizzaBlock.propTypes = {
   price: PropTypes.number,
   types: PropTypes.arrayOf(PropTypes.number),
   sizes: PropTypes.arrayOf(PropTypes.number),
+  addToCart: PropTypes.func,
+  quantity: PropTypes.number,
 }
 
 PizzaBlock.defaultProps = {
@@ -86,6 +101,7 @@ PizzaBlock.defaultProps = {
   price: 0,
   types: [],
   sizes: [],
+  quantity: 0,
 }
 
 export default PizzaBlock
