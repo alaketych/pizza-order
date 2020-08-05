@@ -4,9 +4,8 @@ const app = express()
 
 app.use(cors())
 
-app.get("/", (request, response) => {
-    response.send({ message: "We did it!" })
-})
+const start = require('./routes/start')
+app.use('/', start)
 
 app.set('port', process.env.PORT || 8000)
 app.listen(app.get('port'), () => {
