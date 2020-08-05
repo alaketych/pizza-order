@@ -1,19 +1,26 @@
+const data = require('../controllers/database')
 const express = require('express')
 const router = express.Router()
 
-// const dataBase = require('../controllers/database')
+const querySelectAll = 'select * from '
+const querySelectOne = 'select id from '
 
-// router.get('/', function (request, response) {
-//     dataBase.query('select * from pizza', (error, data) =>  {
-//         if(error) throw error
+router.get('/', (request, response) => {
+    try {
+        const asd = data.query(querySelectAll + 'pizza', (error, data) =>  {
+        if(error) throw error
 
-//         console.log('Data received from DB:')
-//         console.log(data)
-//     })
-// })
+        response.json(asd)
+        console.log(data)
+    })
+    } catch (error) {
+        response.status(500).json({ message: error.message })
+    }
 
-router.get("/", (request, response) => {
-    response.send("We did it!")
+})
+
+router.get('/:pizzaId', (request, response) => {
+    data.query()
 })
 
 module.exports = router
